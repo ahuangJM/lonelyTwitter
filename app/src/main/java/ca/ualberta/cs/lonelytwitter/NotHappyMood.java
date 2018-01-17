@@ -15,7 +15,7 @@ public class NotHappyMood extends Mood {
         super(mood, date);
     }
 
-    public Boolean isHappy() {
-        return Boolean.FALSE;
+    public String isHappy() {
+        return Boolean.FALSE.toString();
     }
 }

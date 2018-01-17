@@ -34,5 +34,5 @@ public abstract class Mood {
     public Date getDate() {
         return this.date;
     }
-    public abstract Boolean isHappy();
+    public abstract String isHappy();
 }

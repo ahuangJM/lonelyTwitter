@@ -15,7 +15,7 @@ public class HappyMood extends Mood {
         super(mood, date);
     }
 
-    public Boolean isHappy() {
-        return Boolean.TRUE;
+    public String isHappy() {
+        return Boolean.TRUE.toString();
     }
 }
