@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class LonelyTwitterActivity extends Activity {
 
@@ -91,6 +92,18 @@ public class LonelyTwitterActivity extends Activity {
 		for (Tweet t : tweetArrayList) {
 			Log.d("Importance:",t.isImportant().toString());
 		}
+
+		ArrayList<Tweetable> tweetableArrayList = new ArrayList<Tweetable>();
+		tweetableArrayList.add(normalTweet);
+		tweetableArrayList.add(normalTweet1);
+		tweetableArrayList.add(normalTweet2);
+		tweetableArrayList.add(importantTweet1);
+		tweetableArrayList.add(importantTweet2);
+		String messageOnScreen = "";
+		for (Tweetable t : tweetableArrayList) {
+			messageOnScreen += (t.getMessage() + "\n");
+		}
+		Toast.makeText(this, messageOnScreen, Toast.LENGTH_SHORT).show();
 	}
 
 	private String[] loadFromFile() {
