@@ -1,3 +1,14 @@
+/*
+* CMPUT 301
+*
+* Lab 4
+*
+* 2018-02-01
+*
+* JingMing Huang
+*
+* Copyright 2018. All rights reserved. Used by permission
+ */
 package ca.ualberta.cs.lonelytwitter;
 
 /**

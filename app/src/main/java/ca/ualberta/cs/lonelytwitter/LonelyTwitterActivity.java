@@ -1,5 +1,15 @@
+/*
+* CMPUT 301
+*
+* Lab 4
+*
+* 2018-02-01
+*
+* JingMing Huang
+*
+* Copyright 2018. All rights reserved. Used by permission
+ */
 package ca.ualberta.cs.lonelytwitter;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -101,6 +111,9 @@ public class LonelyTwitterActivity extends Activity {
 
 	}
 
+	/**
+	 * load from global file name to adapter and reset adapter
+	 */
 	private void loadFromFile() {
 
 		try {
@@ -118,7 +131,10 @@ public class LonelyTwitterActivity extends Activity {
 			tweetList = new ArrayList<Tweet>();
 		}
 	}
-	
+
+	/**
+	 * save adapter to file for new tweets
+	 */
 	private void saveInFile() {
 		try {
 

@@ -1,3 +1,14 @@
+/*
+* CMPUT 301
+*
+* Lab 4
+*
+* 2018-02-01
+*
+* JingMing Huang
+*
+* Copyright 2018. All rights reserved. Used by permission
+ */
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
@@ -17,6 +28,12 @@ public abstract class Mood {
         this.mood = mood;
         this.date = date;
     }
+
+    /**
+     * set current mood
+     * @param mood
+     * @throws MoodNotExistException
+     */
     public void setMood(String mood) throws MoodNotExistException {
         if (mood == "Happy" || mood == "NotHappy") {
             this.mood = mood;
