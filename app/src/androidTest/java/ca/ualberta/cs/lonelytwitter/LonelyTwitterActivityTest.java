@@ -3,6 +3,7 @@ package ca.ualberta.cs.lonelytwitter;
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.robotium.solo.Solo;
 
@@ -49,4 +50,20 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
         assertFalse(this.solo.searchText("Test Tweet"));
     }
 
+    public void testClickTweetList() {
+        LonelyTwitterActivity activity = (LonelyTwitterActivity) this.solo.getCurrentActivity();
+        this.solo.assertCurrentActivity("Wrong Activity", LonelyTwitterActivity.class);
+        this.solo.clickOnButton("Clear");
+        this.solo.enterText((EditText) this.solo.getView(R.id.body), "Tweet test");
+        this.solo.clickOnButton("Save");
+        this.solo.waitForText("Tweet test");
+        final ListView oldTweetList = activity.getOldTweetList();
+        Tweet tweet = (Tweet) oldTweetList.getItemAtPosition(0);
+        assertEquals(tweet.getMessage(), "Tweet test");
+        this.solo.clickInList(0);
+        this.solo.assertCurrentActivity("wrong activity", EditTweetActivity.class);
+        assertTrue(this.solo.waitForText("TextView"));
+        this.solo.goBack();
+        this.solo.assertCurrentActivity("Wrong activity", LonelyTwitterActivity.class);
+    }
 }
